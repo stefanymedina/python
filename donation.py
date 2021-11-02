@@ -8,4 +8,9 @@ for v in donations.values():
     total_donations += v
 
 
-print(total_donations)    
+print(total_donations)  
+
+#other function that you can use is sum example:
+
+total = sum(donation for donation in donations.values())
+print(f"total with function sum={total}")
