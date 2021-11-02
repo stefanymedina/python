@@ -14,3 +14,8 @@ print(total_donations)
 
 total = sum(donation for donation in donations.values())
 print(f"total with function sum={total}")
+
+# One more short solution
+
+total_donations1 = sum(donations.values())
+print(f"total with shorter solution: {total_donations1}")
