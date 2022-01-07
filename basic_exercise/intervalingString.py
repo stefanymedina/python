@@ -22,8 +22,9 @@ print(triple_and_filter([1,2,3,4]))
 
 
 #Extract Full name
-def extract_full_name(coll):
-    print(list({"first":item[0], "last":item[1]} for item in (map(lambda x: x.split(), coll))))
+def extract_full_name(l):
+    return list(map(lambda val: "{} {}".format(val['first'], val['last']), l))
 
 
-extract_full_name(['stefany Medina', 'Carlos Luis'])
+names = [{'first': 'Elie', 'last': 'Schoppik'}, {'first': 'Colt', 'last': 'Steele'}]
+print(extract_full_name(names))
