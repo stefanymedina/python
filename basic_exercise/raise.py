@@ -9,7 +9,24 @@ def colorize(text, color):
         raise ValueError(f"{color} is invalid color")
     print(f"Printed {text} in {color}")
 
-colorize("hello", "red") # this is fine
-colorize("hello", "cyan") # this i not good becuse the color is not in the tuple colors
-colorize(123, "red") # this is not good because the first argument is an int and the function is waiting for an string
+#colorize("hello", "red") # this is fine
+#colorize("hello", "cyan") # this i not good becuse the color is not in the tuple colors
+#colorize(123, "red") # this is not good because the first argument is an int and the function is waiting for an string
 
+
+# try
+# except:
+# else:
+# finally:
+
+
+def divide(num1, num2):
+    try:
+        print(int(num1/num2))
+    except ZeroDivisionError:
+        print("Please do not divide by zer")
+    except TypeError:
+        print("Please provide two integers or floats")
+
+
+divide(1,0)
