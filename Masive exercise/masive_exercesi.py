@@ -3,7 +3,10 @@ Reverse string
 '''
 
 # add whatever parameters you deem necessary - good luck!
-from ast import Return
+
+
+
+from itertools import count
 
 
 def reverse_string(arg):
@@ -138,7 +141,6 @@ def truncate(word,num):
     return "Truncation must be at least 3 characters."
 
 #print(truncate("Yo",100))
-
 #-----------------------------------------------------------------------------
 
 '''
@@ -147,5 +149,60 @@ two_list_dictionary(['a', 'b', 'c']  , [1, 2, 3, 4]) # {'a': 1, 'b': 2, 'c': 3}
 two_list_dictionary(['x', 'y', 'z']  , [1,2]) # {'x': 1, 'y': 2, 'z': None}
 '''
 
-def two_list_dictionary():
-    pass
+def two_list_dictionary(list1,list2):
+    dict = {}
+    for idx, val in enumerate(list1):
+        if idx < len(list2):
+            dict[val] = list2[idx]
+        else:
+            dict[val] = None
+    return dict
+
+#print(two_list_dictionary(['a','b','c'],[1,2]))
+#-----------------------------------------------------------------------------
+
+'''
+range_in_list([1,2,3,4],0,2) #  6
+range_in_list([1,2,3,4],0,3) # 10
+range_in_list([1,2,3,4],1) #  9
+range_in_list([1,2,3,4]) # 10
+range_in_list([1,2,3,4],0,100) # 10
+range_in_list([],0,1) # 0
+'''
+
+def range_in_list(list,start=0,last=None):
+    last = last or len(list)
+    return sum(list[start:last+1])
+
+#print(range_in_list([1,2,3,4],0,2))
+#-----------------------------------------------------------------------------
+
+
+'''
+same_frequency(551122,221515) # True
+same_frequency(321142,3212215) # False
+same_frequency(1212, 2211) # True
+'''
+
+def same_frequency(num,num1):
+    for n in str(num):
+        if str(num).count(n) != str(num1).count(n):
+            return False
+    return True
+
+            
+#print(same_frequency(551122,551122))
+#-----------------------------------------------------------------------------
+'''
+find_the_duplicate([1,2,1,4,3,12]) # 1
+find_the_duplicate([6,1,9,5,3,4,9]) # 9
+find_the_duplicate([2,1,3,4]) # None
+'''
+
+def find_the_duplicate(list):
+    for i in list:
+        if list.count(i) > 1 :
+            return i
+    return None
+
+print(find_the_duplicate([1,2,1,4,3,12]))
